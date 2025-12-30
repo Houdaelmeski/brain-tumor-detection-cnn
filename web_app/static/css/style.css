@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ✅ MODEL STATS (Accuracy / Precision / Recall) */
+.model-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+    color: white;
+}
+
+/* ================= UPLOAD ================= */
+.upload-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.browse-btn {
+    background: #667eea;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.upload-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.upload-btn:disabled {
+    opacity: 0.5;
+}
+
+/* ================= RESULT ================= */
+.result-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prediction-main {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tumor-type,
+.confidence {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.value {
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e8f4f8;
+    border-left: 4px solid #667eea;
+}
+
+.model-performance {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* ================= PROBABILITY DISTRIBUTION ================= */
+.probability-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prob-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.prob-label {
+    width: 120px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.prob-bar-wrapper {
+    flex: 1;
+    background: #eee;
+    height: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.prob-bar {
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: width 0.5s ease;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .model-stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}

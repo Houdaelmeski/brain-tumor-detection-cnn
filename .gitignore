@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models (too large for GitHub)
+models/*.keras
+models/*.h5
+models/*.pt
+
+# Dataset
+Training/
+Testing/

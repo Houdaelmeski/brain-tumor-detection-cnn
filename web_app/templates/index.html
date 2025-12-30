@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRI Tumor Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>MRI Tumor Detection System</h1>
+        <p class="subtitle">
+            Upload an MRI image to detect if there is a tumor and its type.
+        </p>
+
+        <!-- ✅ Model Global Metrics (comme avant) -->
+        <div class="model-stats">
+            <div class="stat">Accuracy: 87.95%</div>
+            <div class="stat">Precision: 89.14%</div>
+            <div class="stat">Recall: 87.03%</div>
+        </div>
+    </header>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+        <div class="upload-card">
+            <h2>Select MRI Image:</h2>
+
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" accept="image/*" class="file-input">
+                <label for="fileInput" class="file-label">
+                    <span id="fileName">No file chosen</span>
+                    <span class="browse-btn">Choose File</span>
+                </label>
+            </div>
+
+            <button id="uploadBtn" class="upload-btn" disabled>
+                <span class="btn-text">Upload and Detect</span>
+                <span class="loader" style="display: none;"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="resultSection" class="result-section" style="display: none;">
+        <div class="result-card">
+
+            <div class="result-grid">
+
+                <!-- Image -->
+                <div class="image-container">
+                    <h3>Uploaded Image</h3>
+                    <img id="uploadedImage" src="" alt="Uploaded MRI">
+                </div>
+
+                <!-- Prediction -->
+                <div class="prediction-container">
+                    <h3>Prediction Result</h3>
+
+                    <div class="prediction-main">
+                        <div class="tumor-type">
+                            <span class="label">Tumor:</span>
+                            <span id="tumorType" class="value"></span>
+                        </div>
+
+                        <div class="confidence">
+                            <span class="label">Confidence:</span>
+                            <span id="confidence" class="value"></span>
+                        </div>
+                    </div>
+
+                    <div class="description" id="description"></div>
+
+                    <!-- Performance par classe -->
+                    <div class="model-performance" id="performance"></div>
+                </div>
+
+            </div>
+
+            <!-- Probability Chart -->
+            <div class="chart-container">
+                <h3>Probability Distribution</h3>
+                <div id="probabilityBars" class="probability-bars"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Brain Tumor Detection System - Deep Learning Project 2025</p>
+        <p class="disclaimer">
+            DISCLAIMER: This is a research tool and should not be used for medical diagnosis.
+        </p>
+    </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
